@@ -4,12 +4,12 @@ use rocket::serde::json::Json;
 
 use crate::input::*;
 use rocket::{State};
-use nexus_unity_sdbp::sdbp::response::custom::power::fan::*;
-use nexus_unity_sdbp::sdbp::response::custom::power::temperature::*;
+use noreya_sdbp::sdbp::response::custom::power::fan::*;
+use noreya_sdbp::sdbp::response::custom::power::temperature::*;
 use crate::api::helper::Helper;
 use crate::response;
 use crate::response::CResponse;
-use nexus_unity_sdbp::sdbp::request::custom::power::Power;
+use noreya_sdbp::sdbp::request::custom::power::Power;
 
 #[post("/power/<version>/<slot>/fan/rpm", data="<param>")]
 pub fn rpm_control(settings : &State<Settings>, version : ApiVersion, slot : u16, param : Json<json::rpm::Param>) -> CResponse {

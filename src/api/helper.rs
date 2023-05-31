@@ -1,4 +1,4 @@
-use nexus_unity_sdbp::drv::api::*;
+use noreya_sdbp::drv::api::*;
 use rocket::serde::json::Json;
 
 use crate::api_version::ApiVersion;
@@ -44,6 +44,7 @@ impl Helper {
             Err(_err) => return Err(response::bad_request("Parameter validation failed".to_string())),
             Ok(_) => ()
         };
+
 
         let com_manager = match Manager::new(settings.socket_path(), Some(Duration::from_secs(10))) {
             Ok(value) => value,

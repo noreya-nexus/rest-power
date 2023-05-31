@@ -5,10 +5,10 @@ use rocket::serde::json::Json;
 use crate::input::*;
 use rocket::{State};
 use crate::api::helper::Helper;
-use nexus_unity_sdbp::sdbp::response::custom::power::powercmd::*;
+use noreya_sdbp::sdbp::response::custom::power::powercmd::*;
 use crate::response;
 use crate::response::CResponse;
-use nexus_unity_sdbp::sdbp::request::custom::power::Power;
+use noreya_sdbp::sdbp::request::custom::power::Power;
 
 #[get("/power/<version>/<slot>/protectionlog")]
 pub fn protection(settings: &State<Settings>, version: ApiVersion, slot: u16) -> CResponse {
